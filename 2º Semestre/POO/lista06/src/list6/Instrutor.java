@@ -1,31 +1,26 @@
 package list6;
 import java.util.ArrayList;
 
-public class Instrutor {
-    private String nome;
+public class Instrutor extends Pessoa {
+    
     private String cref;
     private String especialidade;
     private ArrayList<Aluno> alunos;
     private Instrutor mentor;
 
-    public Instrutor(String nome, String cref, String especialidade) {
-        this.nome = nome;
+    
+    public Instrutor(String nome, String cpf, String cref, String especialidade) {
+    	super(nome, cpf);
         this.cref = cref;
         this.especialidade = especialidade;
         alunos = new ArrayList<>();
     }
 
     public Instrutor() {
+    	super(null,null);
         alunos = new ArrayList<>();
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getCref() {
         return cref;
@@ -78,7 +73,7 @@ public class Instrutor {
         return getResumo();
     }
 
-   
+    @Override
 	public String getResumo() {
         System.out.print("Alunos{");
         for (Aluno a : alunos) {
@@ -87,14 +82,14 @@ public class Instrutor {
         System.out.print("}\n");
         try {
             return "Instrutor{" +
-                    "nome='" + nome + '\'' +
+                    "nome='" + getNome() + '\'' +
                     ", cref='" + cref + '\'' +
                     ", especialidade='" + especialidade + '\'' +
                     ", mentor=" + mentor.getNome() +
                     '}';
         } catch (NullPointerException ex) {
             return "Instrutor{" +
-                    "nome='" + nome + '\'' +
+                    "nome='" + getNome() + '\'' +
                     ", cref='" + cref + '\'' +
                     ", especialidade='" + especialidade + '\'' +
                     ", mentor= Sem mentor" +

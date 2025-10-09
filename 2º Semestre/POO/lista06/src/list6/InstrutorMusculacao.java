@@ -4,8 +4,8 @@ public class InstrutorMusculacao extends Instrutor {
 
 	
 	
-	public InstrutorMusculacao(String nome, String cref, String especialidade) {
-		super(nome, cref, especialidade);
+	public InstrutorMusculacao(String nome,String cpf, String cref, String especialidade) {
+		super(nome, cpf, cref, especialidade);
 		
 	}
 

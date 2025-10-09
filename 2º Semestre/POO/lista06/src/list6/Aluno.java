@@ -2,9 +2,9 @@ package list6;/**
  * Representa um aluno com nome, matricula, idade, peso e altura
  * Permite alterar os dados do aluno
  */
-public class Aluno {
+public class Aluno extends Pessoa {
     /** Nome do aluno */
-    private String nome;
+   
 
     /** Numero de matricula do aluno */
     private String matricula;
@@ -33,8 +33,8 @@ public class Aluno {
      * @param peso Peso do aluno
      * @param altura Altura do aluno
      */
-    public Aluno(String nome, String matricula, int idade, double peso, double altura) {
-        this.nome = nome;
+    public Aluno(String nome,String cpf, String matricula, int idade, double peso, double altura) {
+    	super(nome, cpf);
         this.matricula = matricula;
         if (idade >= 0) {
             this.idade = idade;
@@ -61,35 +61,28 @@ public class Aluno {
      * @param nome Nome do aluno
      * @param matricula Matricula do aluno
      */
-    public Aluno(String nome, String matricula) {
-        this.nome = nome;
+    public Aluno(String nome, String cpf, String matricula) {
+    	super(nome, cpf);
         this.matricula = matricula;
     }
+    
 
-    /**
+	/**
      * Construtor vazio, nenhum campo é iniciado
      */
     public Aluno() {
-
+    	super(null, null);
     }
 
-    /**
-     * Retorna o nome do aluno
-     * @return Nome do aluno
-     */
-    public String getNome() {
-        return nome;
-    }
+    
 
-    /**
-     * Define o nome do aluno
-     * @param nome Novo nome do aluno
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
-    /**
+    public Aluno(String nome, String matricula) {
+		super(nome);
+		this.matricula = matricula;
+	}
+
+	/**
      * Retorna a matricula do aluno
      * @return Matricula do aluno
      */
@@ -200,9 +193,9 @@ public class Aluno {
     public String toString() {
         return getResumo();
     }
-    
+    @Override
 	public String getResumo() {
-		return "Aluno [nome=" + nome + ", matricula=" + matricula + ", idade=" + idade + ", peso=" + peso + ", altura="
+		return "Aluno [nome=" + getNome() + ", matricula=" + matricula + ", idade=" + idade + ", peso=" + peso + ", altura="
 				+ altura + ", instrutor=" + instrutor + ", planoTreino=" + planoTreino + "]";
 	}
     
