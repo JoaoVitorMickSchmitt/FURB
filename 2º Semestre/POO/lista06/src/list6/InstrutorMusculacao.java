@@ -9,6 +9,8 @@ public class InstrutorMusculacao extends Instrutor {
 		
 	}
 
+
+
 	@Override
 	public String getResumo() {
 		return "Instrutor especializado em hipertrofia muscular" + super.getResumo();

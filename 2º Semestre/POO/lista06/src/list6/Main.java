@@ -1,4 +1,8 @@
-package list6;/**
+package list6;
+
+import java.util.ArrayList;
+
+/**
  * Classe principal que executa testes com as classes Aluno e PlanoTreino
  * @author Carlos Alfredo Isensee
  */
@@ -12,13 +16,15 @@ public class Main {
         /**
          * Criação de alunos com dados validos
          */
-        Aluno aluno1 = new Aluno("Carlos", "0001", 18, 60, 1.80);
-        Aluno aluno2 = new Aluno("Farinha", "0002", 18, 150, 1.80);
-
+        Aluno aluno1 = new Aluno("Carlos", "111111111-11","0001", 18, 60, 1.80);
+        Aluno aluno2 = new Aluno("Farinha","222222222-22", "0002", 18, 150, 1.80);
+        Aluno aluno3 = new Aluno("Cleiton","543543543-54", "0003", 18, 150, 1.80);
+        Aluno aluno4 = new Aluno("Rasta","999999999-99", "0004", 18, 150, 1.80);
+        Aluno aluno5 = new Aluno("Kaue","101010101-01", "0005", 18, 150, 1.80);
         /**
          * Cria instrutores validos
          */
-        Instrutor instrutor1 = new Instrutor("Farinha", "123456", "Musculação");
+        Instrutor instrutor1 = new Instrutor("Gustavo","333333333-33", "123456", "Musculação");
 
         instrutor1.adicionarAluno(aluno1);
         instrutor1.adicionarAluno(aluno2);
@@ -52,8 +58,11 @@ public class Main {
         System.out.println();
 
 
-        Instrutor instrutor2 = new Instrutor("Josito", "234567", "Pilates");
-
+        Instrutor instrutor2 = new Instrutor("Josito","444444444-44", "234567", "Pilates");
+        Instrutor instrutor3 = new Instrutor("Lala","363.821.342-01", "234567", "Pilates");
+        Instrutor instrutor4 = new Instrutor("Kaka","355.103.017-08", "234567", "Pilates");
+        Instrutor instrutor5 = new Instrutor("Jaja","419.400.692-54", "234567", "Pilates");
+        
         System.out.println("Testes de mentor");
         instrutor1.setMentor(instrutor1);
         instrutor1.setMentor(instrutor2);
@@ -65,8 +74,8 @@ public class Main {
         System.out.println(plano1.getResumo());
 
         
-        InstrutorMusculacao im1 = new InstrutorMusculacao("kakak", "3333", "musculaçao");
-        InstrutorPilates ip1 = new InstrutorPilates("cleito", "5435", "pilates");
+        InstrutorMusculacao im1 = new InstrutorMusculacao("kakak","55555555-55", "3333", "musculaçao");
+        InstrutorPilates ip1 = new InstrutorPilates("cleito","666666666-66", "5435", "pilates");
         
        System.out.println(instrutor1); 
        System.out.println(im1);
@@ -77,5 +86,24 @@ public class Main {
       System.out.println(aluno1);
       System.out.println(av1.getResumo());
        System.out.println(av1.getDescontoMensalidade());
+       
+       ArrayList<Pessoa> pessoas = new ArrayList<>();
+       
+       pessoas.add(aluno1);
+       pessoas.add(aluno2);
+       pessoas.add(aluno3);
+       pessoas.add(aluno4);
+       pessoas.add(aluno5);
+       
+       pessoas.add(instrutor1);
+       pessoas.add(instrutor2);
+       pessoas.add(instrutor3);
+       pessoas.add(instrutor4);
+       pessoas.add(instrutor5);
+       
+       for (Pessoa p : pessoas) {
+	System.out.println(p.getResumo());
+	}
+       
     }
 }
