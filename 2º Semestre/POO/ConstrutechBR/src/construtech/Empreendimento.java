@@ -16,7 +16,31 @@ public class Empreendimento extends Obra {
         this.localizacao = localizacao;
     }
 
-    public String getResumo() {
+    public String getTipoArea() {
+		return tipoArea;
+	}
+
+	public void setTipoArea(String tipoArea) {
+		this.tipoArea = tipoArea;
+	}
+
+	public double getMetragem() {
+		return metragem;
+	}
+
+	public void setMetragem(double metragem) {
+		this.metragem = metragem;
+	}
+
+	public String getLocalizacao() {
+		return localizacao;
+	}
+
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
+
+	public String getResumo() {
         return "Empreendimento ID " + getId() + ": " + getDescricao() +
                " | Área: " + tipoArea + " | " + metragem + "m² em " + localizacao;
     }
