@@ -60,7 +60,7 @@ public class ListaEncadeada<T> {
 		}
 
 		if (p != null) {
-			if (p != null) {
+			if (anterior == null) {
 				this.primeiro = p.getProximo();
 			} else {
 				anterior.setProximo(p.getProximo());
@@ -118,4 +118,5 @@ public class ListaEncadeada<T> {
 
 		return s;
 	}
+	
 }
